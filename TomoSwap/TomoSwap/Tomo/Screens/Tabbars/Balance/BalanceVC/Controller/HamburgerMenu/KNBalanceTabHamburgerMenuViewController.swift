@@ -192,13 +192,6 @@ class KNBalanceTabHamburgerMenuViewController: KNBaseViewController {
     })
   }
 
-  @objc func promoCodeTapped(_ sender: Any?) {
-    self.hideMenu(animated: true) {
-      self.delegate?.balanceTabHamburgerMenuViewController(self, run: .selectPromoCode)
-    }
-    KNCrashlyticsUtil.logCustomEvent(withName: "hamburger_menu", customAttributes: ["type": "kybercode"])
-  }
-
   @objc func backgroundViewTap(_ recognizer: UITapGestureRecognizer) {
     let point = recognizer.location(in: self.view)
     if point.x <= self.view.frame.width - self.hamburgerView.frame.width {

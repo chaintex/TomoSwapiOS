@@ -26,14 +26,13 @@ class KNDebugMenuViewController: KNBaseViewController {
   }
 
   fileprivate func setupEnvironment() {
-//    self.environmentSegmentedControl.rounded(color: .clear, width: 0, radius: 5.0)
-//    self.environmentSegmentedControl.selectedSegmentIndex = {
-//      if self.environment == .production { return 0 }
-//      if self.environment == .ropsten { return 1 }
-//      if self.environment == .rinkeby { return 2 }
-//      return 3 // rinkeby
-//    }()
-//    self.updateEnvironmentData()
+    self.environmentSegmentedControl.rounded(color: .clear, width: 0, radius: 5.0)
+    self.environmentSegmentedControl.selectedSegmentIndex = {
+      if self.environment == .mainnet { return 0 }
+      if self.environment == .testnet { return 1 }
+      return 1 // testnet
+    }()
+    self.updateEnvironmentData()
   }
 
   @IBAction func backPressed(_ sender: Any) {
@@ -60,13 +59,12 @@ class KNDebugMenuViewController: KNBaseViewController {
   }
 
   @IBAction func environmentSegmentedControl(_ sender: UISegmentedControl) {
-//    self.newEnvironment = {
-//      if sender.selectedSegmentIndex == 0 { return .production }
-//      if sender.selectedSegmentIndex == 1 { return .ropsten }
-//      if sender.selectedSegmentIndex == 2 { return .rinkeby }
-//      return .staging
-//    }()
-//    self.updateEnvironmentData()
+    self.newEnvironment = {
+      if sender.selectedSegmentIndex == 0 { return .mainnet }
+      if sender.selectedSegmentIndex == 1 { return .testnet }
+      return .testnet
+    }()
+    self.updateEnvironmentData()
   }
 
   fileprivate func updateEnvironmentData() {
