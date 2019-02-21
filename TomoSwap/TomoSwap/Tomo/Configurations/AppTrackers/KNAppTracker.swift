@@ -28,13 +28,9 @@ class KNAppTracker {
   static let kAppStyle: String = "kAppStyle"
   static let userDefaults: UserDefaults = UserDefaults.standard
 
-  static func internalCachedEnpoint() -> String {
-    return KNSecret.internalCachedEndpoint
-  }
+  static func internalCachedEnpoint() -> String { return "https://google.com" }
 
-  static func internalTrackerEndpoint() -> String {
-    return KNEnvironment.default.isMainnet ? KNSecret.trackerURL : KNSecret.debugTrackerURL
-  }
+  static func internalTrackerEndpoint() -> String { return "https://google.com" }
 
   static func updateInternalTrackerEndpoint(value: String) {
     userDefaults.set(value, forKey: kInternalTrackerEndpointKey)
