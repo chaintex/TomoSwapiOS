@@ -21,7 +21,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KYCPersonalInfoViewController" customModule="KyberNetwork" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KYCPersonalInfoViewController" customModule="TomoSwap" customModuleProvider="target">
             <connections>
                 <outlet property="addWalletButton" destination="9YI-6h-Psy" id="amv-BV-KZG"/>
                 <outlet property="addWalletContainerView" destination="QHC-zJ-6yE" id="ssw-No-lVr"/>
@@ -182,7 +182,7 @@
                                 <constraint firstAttribute="height" constant="1" id="fHi-AV-anO"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAL-xL-9HK">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAL-xL-9HK">
                             <rect key="frame" x="319" y="385" width="32" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="32" id="mTp-yh-AEo"/>
@@ -193,7 +193,7 @@
                                 <action selector="nationalityButtonPressed:" destination="-1" eventType="touchUpInside" id="EPe-V6-MgM"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6c-CU-Any">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6c-CU-Any">
                             <rect key="frame" x="319" y="985" width="32" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="21Q-s7-s3h"/>
@@ -453,7 +453,7 @@
                             <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cK-EC-LuQ">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cK-EC-LuQ">
                             <rect key="frame" x="319" y="1306" width="32" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="32" id="VLj-Ku-o40"/>
@@ -541,7 +541,7 @@
                                 <constraint firstAttribute="height" constant="1" id="6IP-bw-Vie"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zfe-QW-bsL">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zfe-QW-bsL">
                             <rect key="frame" x="319" y="1645" width="32" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="32" id="wrp-X4-qah"/>
@@ -552,7 +552,7 @@
                                 <action selector="primarySourceOfFundButtonPressed:" destination="-1" eventType="touchUpInside" id="NcQ-aL-czx"/>
                             </connections>
                         </button>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1A5-pG-MKx" customClass="KYCPersonalOptionalDataView" customModule="KyberNetwork" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1A5-pG-MKx" customClass="KYCPersonalOptionalDataView" customModule="TomoSwap" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="1707" width="375" height="128"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
