@@ -74,16 +74,16 @@ class KNRateCoordinator {
   init() {}
 
   func resume() {
-//    self.fetchCacheRate(nil)
-//    self.cacheRateTimer?.invalidate()
-//    self.cacheRateTimer = Timer.scheduledTimer(
-//      withTimeInterval: KNLoadingInterval.cacheRateLoadingInterval,
-//      repeats: true,
-//      block: { [weak self] timer in
-//        self?.fetchCacheRate(timer)
-//      }
-//    )
-//    // Immediate fetch data from server, then run timers with interview 60 seconds
+    self.fetchCacheRate(nil)
+    self.cacheRateTimer?.invalidate()
+    self.cacheRateTimer = Timer.scheduledTimer(
+      withTimeInterval: KNLoadingInterval.cacheRateLoadingInterval,
+      repeats: true,
+      block: { [weak self] timer in
+        self?.fetchCacheRate(timer)
+      }
+    )
+    // Immediate fetch data from server, then run timers with interview 60 seconds
     self.fetchExchangeTokenRate(nil)
     self.exchangeTokenRatesTimer?.invalidate()
 
@@ -97,8 +97,8 @@ class KNRateCoordinator {
   }
 
   func pause() {
-//    self.cacheRateTimer?.invalidate()
-//    self.cacheRateTimer = nil
+    self.cacheRateTimer?.invalidate()
+    self.cacheRateTimer = nil
     self.exchangeTokenRatesTimer?.invalidate()
     self.exchangeTokenRatesTimer = nil
     self.isLoadingExchangeTokenRates = false
@@ -113,6 +113,7 @@ class KNRateCoordinator {
     let group = DispatchGroup()
     for token in tokens {
       if token.isTOMO {
+        let rate = KNTrackerRateStorage.shared.trackerRate(for: token)
         let json: JSONDictionary = [
           "timestamp": Date().timeIntervalSince1970,
           "token_name": token.name,
@@ -120,7 +121,9 @@ class KNRateCoordinator {
           "token_decimal": token.decimals,
           "token_address": token.address.description,
           "rate_eth_now": 1.0,
-          "change_eth_24h": 0.0,
+          "change_eth_24h": rate?.changeETH24h ?? 0.0,
+          "rate_usd_now": rate?.rateUSDNow ?? 0.0,
+          "change_usd_24h": rate?.changeUSD24h ?? 0.0
         ]
         let trackerRate = KNTrackerRate(dict: json)
         rates.append(trackerRate)
@@ -131,6 +134,7 @@ class KNRateCoordinator {
           to: tomo,
           amount: BigInt(0)) { result in
           if case .success(let data) = result {
+            let cacheRate = KNTrackerRateStorage.shared.trackerRate(for: token)
             let expectedRate = data.0
             let rate = Double(expectedRate) / pow(10.0, 18)
             let json: JSONDictionary = [
@@ -141,6 +145,8 @@ class KNRateCoordinator {
               "token_address": token.address.description,
               "rate_eth_now": rate,
               "change_eth_24h": 0.0,
+              "rate_usd_now": cacheRate?.rateUSDNow ?? 0.0,
+              "change_usd_24h": cacheRate?.changeUSD24h ?? 0.0
               ]
             let trackerRate = KNTrackerRate(dict: json)
             rates.append(trackerRate)
@@ -157,12 +163,37 @@ class KNRateCoordinator {
   }
 
   @objc func fetchCacheRate(_ sender: Any?) {
-//    KNInternalProvider.shared.getKNExchangeTokenRate { [weak self] result in
-//      guard let `self` = self else { return }
-//      if case .success(let rates) = result {
-//        self.cacheRates = rates
-//      }
-//    }
+    guard let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=tomochain") else { return }
+    let tomo = KNSupportedTokenStorage.shared.tomoToken
+    URLSession.shared.dataTask(with: url) { (data, _, error) in
+      DispatchQueue.main.async {
+        if error == nil, let data = data {
+          do {
+            let jsonArr = try JSONSerialization.jsonObject(with: data, options: []) as? [JSONDictionary] ?? []
+            let json = jsonArr.isEmpty ? [:] : jsonArr[0]
+            let usdPrice = json["current_price"] as? Double ?? 0.0
+            let change24h = json["price_change_percentage_24h"] as? Double ?? 0.0
+            let objects = KNTrackerRateStorage.shared.rates
+            objects.forEach({
+              if !$0.isTrackerRate(for: tomo) {
+               KNTrackerRateStorage.shared.updateUSDRate(
+                tracker: $0,
+                usdRate: $0.rateETHNow * usdPrice,
+                change24h: $0.changeUSD24h
+                )
+              } else {
+                KNTrackerRateStorage.shared.updateUSDRate(
+                  tracker: $0,
+                  usdRate: usdPrice,
+                  change24h: change24h
+                )
+              }
+            })
+            KNNotificationUtil.postNotification(for: kExchangeTokenRateNotificationKey, object: nil, userInfo: nil)
+          } catch {}
+        }
+      }
+    }.resume()
   }
 }
 

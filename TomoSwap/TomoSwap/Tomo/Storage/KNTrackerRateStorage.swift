@@ -37,6 +37,15 @@ class KNTrackerRateStorage {
     self.add(rates: rates)
   }
 
+  func updateUSDRate(tracker: KNTrackerRate, usdRate: Double, change24h: Double) {
+    if self.realm == nil { return }
+    self.realm.beginWrite()
+    tracker.rateUSDNow = usdRate
+    tracker.changeUSD24h = change24h
+    self.realm.add([tracker], update: true)
+    try!self.realm.commitWrite()
+  }
+
   func delete(rates: [KNTrackerRate]) {
     if self.realm == nil { return }
     self.realm.beginWrite()

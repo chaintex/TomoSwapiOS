@@ -527,41 +527,42 @@ class KNTokenChartViewController: KNBaseViewController {
   }
 
   fileprivate func shouldUpdateData(for type: KNTokenChartType, token: TokenObject) {
-    self.noDataLabel.text = "\(NSLocalizedString("updating.data", value: "Updating data", comment: ""))..."
-    self.noDataLabel.addLetterSpacing()
-    self.viewModel.fetchNewData(
-      for: self.viewModel.token,
-      type: self.viewModel.type) { [weak self] result in
-        switch result {
-        case .success(let isSuccess):
-          if isSuccess {
-            self?.reloadViewDataDidUpdate()
-          } else {
-            self?.noDataLabel.text = NSLocalizedString("can.not.update.data", value: "Can not update data", comment: "")
-          }
-        case .failure:
-          self?.noDataLabel.text = NSLocalizedString("can.not.update.data", value: "Can not update data", comment: "")
-        }
-        self?.noDataLabel.addLetterSpacing()
-    }
+    self.noDataLabel.text = NSLocalizedString("can.not.update.data", value: "Can not update data", comment: "")
+//    self.noDataLabel.text = "\(NSLocalizedString("updating.data", value: "Updating data", comment: ""))..."
+//    self.noDataLabel.addLetterSpacing()
+//    self.viewModel.fetchNewData(
+//      for: self.viewModel.token,
+//      type: self.viewModel.type) { [weak self] result in
+//        switch result {
+//        case .success(let isSuccess):
+//          if isSuccess {
+//            self?.reloadViewDataDidUpdate()
+//          } else {
+//            self?.noDataLabel.text = NSLocalizedString("can.not.update.data", value: "Can not update data", comment: "")
+//          }
+//        case .failure:
+//          self?.noDataLabel.text = NSLocalizedString("can.not.update.data", value: "Can not update data", comment: "")
+//        }
+//        self?.noDataLabel.addLetterSpacing()
+//    }
   }
 
   fileprivate func startTimer() {
-    self.stopTimer()
-    // Immediately call fetch data
-    self.shouldUpdateData(for: self.viewModel.type, token: self.viewModel.token)
-    self.timer = Timer.scheduledTimer(
-      withTimeInterval: 60,
-      repeats: true,
-      block: { [weak self] _ in
-        guard let `self` = self else { return }
-        self.shouldUpdateData(for: self.viewModel.type, token: self.viewModel.token)
-      }
-    )
+//    self.stopTimer()
+//    // Immediately call fetch data
+//    self.shouldUpdateData(for: self.viewModel.type, token: self.viewModel.token)
+//    self.timer = Timer.scheduledTimer(
+//      withTimeInterval: 60,
+//      repeats: true,
+//      block: { [weak self] _ in
+//        guard let `self` = self else { return }
+//        self.shouldUpdateData(for: self.viewModel.type, token: self.viewModel.token)
+//      }
+//    )
   }
 
   fileprivate func stopTimer() {
-    self.timer?.invalidate()
+//    self.timer?.invalidate()
   }
 
   fileprivate func reloadViewDataDidUpdate() {

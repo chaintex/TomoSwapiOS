@@ -123,7 +123,7 @@ class KSwapViewModel {
   }
 
   var isToTokenBtnEnabled: Bool {
-    guard let destToken = KNWalletPromoInfoStorage.shared.getDestinationToken(from: self.walletObject.address) else {
+    guard let _ = KNWalletPromoInfoStorage.shared.getDestinationToken(from: self.walletObject.address) else {
       // not a promo wallet, always enabled
       return true
     }
