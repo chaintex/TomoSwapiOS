@@ -3,8 +3,8 @@
 import UIKit
 import Branch
 //import Moya
-//import Fabric
-//import Crashlytics
+import Fabric
+import Crashlytics
 import UserNotificationsUI
 import UserNotifications
 //import OneSignal
@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             print("EtherKeystore init issue.")
         }
         KNReachability.shared.startNetworkReachabilityObserver()
-//        Fabric.with([Crashlytics.self])
+        Fabric.with([Crashlytics.self])
 //        OneSignal.setRequiresUserPrivacyConsent(false)
 //        OneSignal.initWithLaunchOptions(launchOptions, appId: KNSecret.oneSignalAppID)
 //        OneSignal.inFocusDisplayType = .notification

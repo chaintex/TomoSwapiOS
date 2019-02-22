@@ -13,6 +13,7 @@ class TokenObject: Object {
     @objc dynamic var decimals: Int = 0
     @objc dynamic var value: String = ""
     @objc dynamic var icon: String = ""
+    @objc dynamic var rateID: String = ""
     @objc dynamic var isCustom: Bool = false
     @objc dynamic var isSupported: Bool = false
     @objc dynamic var isDisabled: Bool = false
@@ -21,6 +22,7 @@ class TokenObject: Object {
         contract: String = "",
         name: String = "",
         symbol: String = "",
+        rateID: String = "",
         decimals: Int = 0,
         value: String,
         isCustom: Bool = false,
@@ -31,6 +33,7 @@ class TokenObject: Object {
         self.contract = contract
         self.name = name
         self.symbol = symbol
+        self.rateID = rateID
         self.decimals = decimals
         self.value = value
         self.icon = symbol.lowercased()
@@ -45,6 +48,7 @@ class TokenObject: Object {
       self.name = localDict["name"] as? String ?? ""
       self.symbol = localDict["symbol"] as? String ?? ""
       self.icon = self.symbol.lowercased()
+      self.rateID = localDict["rateID"] as? String ?? ""
       self.contract = (localDict["address"] as? String ?? "").lowercased()
       self.decimals = localDict["decimals"] as? Int ?? 0
       self.isSupported = true
@@ -55,6 +59,7 @@ class TokenObject: Object {
       self.init()
       self.name = trackerDict["name"] as? String ?? ""
       self.symbol = trackerDict["symbol"] as? String ?? ""
+      self.rateID = trackerDict["rateID"] as? String ?? ""
       self.icon = self.symbol.lowercased()
       self.contract = (trackerDict["contractAddress"] as? String ?? "").lowercased()
       self.decimals = trackerDict["decimals"] as? Int ?? 0
@@ -66,19 +71,16 @@ class TokenObject: Object {
       self.init()
       self.name = apiDict["name"] as? String ?? ""
       self.symbol = apiDict["symbol"] as? String ?? ""
+      self.rateID = apiDict["rateID"] as? String ?? ""
       self.icon = self.symbol.lowercased()
       self.contract = (apiDict["address"] as? String ?? "").lowercased()
       self.decimals = apiDict["decimals"] as? Int ?? 0
       self.isSupported = true
     }
 
-    var isTOMO: Bool {
-      return self.symbol == "TOMO"
-    }
+    var isTOMO: Bool { return self.symbol == "TOMO" }
 
-    var isCTT: Bool {
-      return self.symbol == "CTT"
-    }
+    var isCTT: Bool { return self.symbol == "CTT" }
 
     var display: String {
       return "\(self.symbol) - \(self.name)"
@@ -137,6 +139,10 @@ extension TokenObject {
 
   var iconURL: String {
     return "https://raw.githubusercontent.com/KyberNetwork/KyberNetwork.github.io/master/DesignAssets/tokens/iOS/\(self.icon).png"
+  }
+
+  var rateURL: String {
+    return "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=\(self.rateID)"
   }
 
   func contains(_ text: String) -> Bool {

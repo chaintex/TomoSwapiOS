@@ -16,8 +16,6 @@ class KNRateCoordinator {
 
   static let shared = KNRateCoordinator()
 
-//  fileprivate let provider = MoyaProvider<KNTrackerService>()
-
   fileprivate var cacheRates: [KNRate] = []
   fileprivate var cacheRateTimer: Timer?
 
@@ -163,8 +161,8 @@ class KNRateCoordinator {
   }
 
   @objc func fetchCacheRate(_ sender: Any?) {
-    guard let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=tomochain") else { return }
     let tomo = KNSupportedTokenStorage.shared.tomoToken
+    guard let url = URL(string: tomo.rateURL) else { return }
     URLSession.shared.dataTask(with: url) { (data, _, error) in
       DispatchQueue.main.async {
         if error == nil, let data = data {

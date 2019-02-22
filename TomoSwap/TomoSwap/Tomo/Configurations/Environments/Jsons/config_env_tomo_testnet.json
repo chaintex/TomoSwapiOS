@@ -16,6 +16,7 @@
       "icon": "tomo",
       "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
       "decimals": 18,
+      "rateID": "tomochain"
     },
     "CTC": {
       "name": "ChainTEX Token",
@@ -23,6 +24,7 @@
       "icon": "ctt",
       "address": "0x06cca536f531ac3426077ca39b629d901c5cf272",
       "decimals": 18,
+      "rateID": "chaintexttoken"
     }
   },
   "ethScanUrl": "https://scan.testnet.tomochain.com/",
