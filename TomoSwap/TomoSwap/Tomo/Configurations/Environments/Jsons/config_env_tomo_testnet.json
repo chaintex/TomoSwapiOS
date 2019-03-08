@@ -18,7 +18,7 @@
       "decimals": 18,
       "rateID": "tomochain"
     },
-    "CTC": {
+    "CTT": {
       "name": "ChainTEX Token",
       "symbol": "CTT",
       "icon": "ctt",
