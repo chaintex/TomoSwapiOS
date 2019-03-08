@@ -30,10 +30,11 @@ class KNSplashScreenViewController: KNBaseViewController {
   }
 
   func rotateSplashLogo(duration: TimeInterval = 1.6, completion: @escaping () -> Void) {
-    let images = [UIImage(named: "logo_1")!, UIImage(named: "logo_2")!, UIImage(named: "logo_3")!, UIImage(named: "logo_4")!]
-    self.splashLogoImageView.animationImages = images
-    self.splashLogoImageView.animationDuration = 0.8
-    self.splashLogoImageView.startAnimating()
+//    let images = [UIImage(named: "logo_1")!, UIImage(named: "logo_2")!, UIImage(named: "logo_3")!, UIImage(named: "logo_4")!]
+//    self.splashLogoImageView.animationImages = images
+//    self.splashLogoImageView.animationDuration = 0.8
+//    self.splashLogoImageView.startAnimating()
+    self.splashLogoImageView.image = UIImage(named: "logo")
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + duration, execute: completion)
   }
 

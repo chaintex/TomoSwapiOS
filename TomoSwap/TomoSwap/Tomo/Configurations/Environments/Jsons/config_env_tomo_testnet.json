@@ -25,11 +25,19 @@
       "address": "0x06cca536f531ac3426077ca39b629d901c5cf272",
       "decimals": 18,
       "rateID": "chaintexttoken"
+    },
+    "KNC": {
+      "name": "Kyber Network Crystal",
+      "symbol": "KNC",
+      "icon": "knc",
+      "address": "0x26d22feb6419d08cc38a10812a231926fe427491",
+      "decimals": 16,
+      "rateID": "kyber-network"
     }
   },
   "ethScanUrl": "https://scan.testnet.tomochain.com/",
   "reserve": "0x30b17b7e0ef60e0344961de1b87ec1620145c4e1",
-  "network": "0x9ec198291b520f2481cd8e0d590821a339319ae7",
+  "network": "0x2b61f513d9732014acd7ebf1541d3623e501362b",
   "trade_topic":"0x1849bd6a030a1bca28b83437fd3de96f3d27a5d172fa7e9c78e7b61468928a39",
   "endpoint": "https://testnet.tomochain.com",
   "averageBlockTime": 2,
