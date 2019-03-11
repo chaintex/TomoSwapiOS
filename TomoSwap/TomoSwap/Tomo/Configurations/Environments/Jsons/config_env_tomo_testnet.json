@@ -36,8 +36,8 @@
     }
   },
   "ethScanUrl": "https://scan.testnet.tomochain.com/",
-  "reserve": "0x30b17b7e0ef60e0344961de1b87ec1620145c4e1",
-  "network": "0x2b61f513d9732014acd7ebf1541d3623e501362b",
+  "reserve": "0xab6e06cf3715c4ca3d1617701138fc86162d3347",
+  "network": "0xad629e28b3428664e10a6d069303965777b6d15c",
   "trade_topic":"0x1849bd6a030a1bca28b83437fd3de96f3d27a5d172fa7e9c78e7b61468928a39",
   "endpoint": "https://testnet.tomochain.com",
   "averageBlockTime": 2,
