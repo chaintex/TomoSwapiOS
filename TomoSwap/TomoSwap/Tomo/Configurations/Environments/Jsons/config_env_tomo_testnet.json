@@ -1,0 +1,47 @@
+{
+  "connections": {
+    "http": [
+      {
+        "endPoint" : "https://testnet.tomochain.com",
+        "type": "prune"
+      }
+    ],
+    "ws": "wss://testnet.tomochain.com/ws"
+  },
+  "api_usd":"https://api.coinmarketcap.com",
+  "tokens": {
+    "TOMO": {
+      "name": "TomoChain",
+      "symbol": "TOMO",
+      "icon": "tomo",
+      "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "decimals": 18,
+      "rateID": "tomochain"
+    },
+    "CTT": {
+      "name": "ChainTEX Token",
+      "symbol": "CTT",
+      "icon": "ctt",
+      "address": "0x06cca536f531ac3426077ca39b629d901c5cf272",
+      "decimals": 18,
+      "rateID": "chaintexttoken"
+    },
+    "KNC": {
+      "name": "Kyber Network Crystal",
+      "symbol": "KNC",
+      "icon": "knc",
+      "address": "0x26d22feb6419d08cc38a10812a231926fe427491",
+      "decimals": 16,
+      "rateID": "kyber-network"
+    }
+  },
+  "ethScanUrl": "https://scan.testnet.tomochain.com/",
+  "reserve": "0xab6e06cf3715c4ca3d1617701138fc86162d3347",
+  "network": "0xad629e28b3428664e10a6d069303965777b6d15c",
+  "trade_topic":"0x1849bd6a030a1bca28b83437fd3de96f3d27a5d172fa7e9c78e7b61468928a39",
+  "endpoint": "https://testnet.tomochain.com",
+  "averageBlockTime": 2,
+  "networkId": 89,
+  "chainName": "Tomo Testnet",
+  "faucet":"https://faucet.testnet.tomochain.com/",
+}
