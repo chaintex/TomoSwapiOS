@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2543D86B223A67AB0085F40E /* KNSecret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543D86A223A67AB0085F40E /* KNSecret.swift */; };
+		2543D86E223A67C10085F40E /* NetworkProxy.json in Resources */ = {isa = PBXBuildFile; fileRef = 2543D86C223A67C00085F40E /* NetworkProxy.json */; };
+		2543D86F223A67C10085F40E /* TestToken.json in Resources */ = {isa = PBXBuildFile; fileRef = 2543D86D223A67C10085F40E /* TestToken.json */; };
 		255C8EB1221DC0B5003F0D70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255C8EB0221DC0B5003F0D70 /* AppDelegate.swift */; };
 		255C8EB6221DC0B5003F0D70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 255C8EB4221DC0B5003F0D70 /* Main.storyboard */; };
 		255C8EB8221DC0B8003F0D70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 255C8EB7221DC0B8003F0D70 /* Assets.xcassets */; };
@@ -105,7 +108,6 @@
 		25ADB5DD221DC2A000A35B05 /* KNLoadingInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ADB38D221DC29E00A35B05 /* KNLoadingInterval.swift */; };
 		25ADB5E5221DC2A000A35B05 /* KNCustomRPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ADB398221DC29E00A35B05 /* KNCustomRPC.swift */; };
 		25ADB5E6221DC2A000A35B05 /* KNEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ADB399221DC29E00A35B05 /* KNEnvironment.swift */; };
-		25ADB5E7221DC2A000A35B05 /* KNSecret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ADB39B221DC29E00A35B05 /* KNSecret.swift */; };
 		25ADB5E8221DC2A000A35B05 /* KNAppTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ADB39D221DC29E00A35B05 /* KNAppTracker.swift */; };
 		25ADB5E9221DC2A000A35B05 /* KNAppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ADB39E221DC29E00A35B05 /* KNAppStyle.swift */; };
 		25ADB5EA221DC2A000A35B05 /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25ADB3A1221DC29E00A35B05 /* SF-Pro-Display-Thin.otf */; };
@@ -442,6 +444,9 @@
 
 /* Begin PBXFileReference section */
 		1B2063022919CCDD40D0555D /* Pods_TomoSwap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TomoSwap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2543D86A223A67AB0085F40E /* KNSecret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNSecret.swift; sourceTree = "<group>"; };
+		2543D86C223A67C00085F40E /* NetworkProxy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NetworkProxy.json; sourceTree = "<group>"; };
+		2543D86D223A67C10085F40E /* TestToken.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestToken.json; sourceTree = "<group>"; };
 		255C8EAD221DC0B5003F0D70 /* TomoSwap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomoSwap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		255C8EB0221DC0B5003F0D70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		255C8EB5221DC0B5003F0D70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -552,7 +557,6 @@
 		25ADB38D221DC29E00A35B05 /* KNLoadingInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNLoadingInterval.swift; sourceTree = "<group>"; };
 		25ADB398221DC29E00A35B05 /* KNCustomRPC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNCustomRPC.swift; sourceTree = "<group>"; };
 		25ADB399221DC29E00A35B05 /* KNEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNEnvironment.swift; sourceTree = "<group>"; };
-		25ADB39B221DC29E00A35B05 /* KNSecret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNSecret.swift; sourceTree = "<group>"; };
 		25ADB39D221DC29E00A35B05 /* KNAppTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNAppTracker.swift; sourceTree = "<group>"; };
 		25ADB39E221DC29E00A35B05 /* KNAppStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNAppStyle.swift; sourceTree = "<group>"; };
 		25ADB3A1221DC29E00A35B05 /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
@@ -904,6 +908,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2543D869223A679E0085F40E /* Secret */ = {
+			isa = PBXGroup;
+			children = (
+				2543D86A223A67AB0085F40E /* KNSecret.swift */,
+			);
+			path = Secret;
+			sourceTree = "<group>";
+		};
 		255C8EA4221DC0B5003F0D70 = {
 			isa = PBXGroup;
 			children = (
@@ -1301,9 +1313,9 @@
 		25ADB38E221DC29E00A35B05 /* Environments */ = {
 			isa = PBXGroup;
 			children = (
+				2543D869223A679E0085F40E /* Secret */,
 				25ADB38F221DC29E00A35B05 /* Jsons */,
 				25ADB397221DC29E00A35B05 /* Sources */,
-				25ADB39A221DC29E00A35B05 /* Secret */,
 			);
 			path = Environments;
 			sourceTree = "<group>";
@@ -1311,6 +1323,8 @@
 		25ADB38F221DC29E00A35B05 /* Jsons */ = {
 			isa = PBXGroup;
 			children = (
+				2543D86C223A67C00085F40E /* NetworkProxy.json */,
+				2543D86D223A67C10085F40E /* TestToken.json */,
 				25ADB720221DC2DC00A35B05 /* config_env_tomo_testnet.json */,
 			);
 			path = Jsons;
@@ -1323,14 +1337,6 @@
 				25ADB399221DC29E00A35B05 /* KNEnvironment.swift */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		25ADB39A221DC29E00A35B05 /* Secret */ = {
-			isa = PBXGroup;
-			children = (
-				25ADB39B221DC29E00A35B05 /* KNSecret.swift */,
-			);
-			path = Secret;
 			sourceTree = "<group>";
 		};
 		25ADB39C221DC29E00A35B05 /* AppTrackers */ = {
@@ -1452,7 +1458,6 @@
 				25ADB3EE221DC29E00A35B05 /* BalanceCoordinator */,
 				25ADB3F0221DC29E00A35B05 /* AppCoordinator */,
 				25ADB3F5221DC29E00A35B05 /* InternalCoordinators */,
-				25ADB3FF221DC29E00A35B05 /* CoinTickerCoordinator */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -1526,13 +1531,6 @@
 				25ADB3FE221DC29E00A35B05 /* KNRecentTradeCoordinator.swift */,
 			);
 			path = RecentTradeCoordinator;
-			sourceTree = "<group>";
-		};
-		25ADB3FF221DC29E00A35B05 /* CoinTickerCoordinator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CoinTickerCoordinator;
 			sourceTree = "<group>";
 		};
 		25ADB400221DC29E00A35B05 /* Networking */ = {
@@ -3279,6 +3277,7 @@
 				25ADB6C4221DC2A100A35B05 /* KNImportWalletViewController.xib in Resources */,
 				25ADB6FB221DC2A100A35B05 /* KYCIdentityInfoViewController.xib in Resources */,
 				25ADB699221DC2A100A35B05 /* KConfirmSendViewController.xib in Resources */,
+				2543D86F223A67C10085F40E /* TestToken.json in Resources */,
 				25ADB6F4221DC2A100A35B05 /* KYCFlowViewController.xib in Resources */,
 				25ADB6FE221DC2A100A35B05 /* KYCProfileVerificationStatusViewController.xib in Resources */,
 				25ADB5FA221DC2A100A35B05 /* SF-Pro-Display-HeavyItalic.otf in Resources */,
@@ -3331,6 +3330,7 @@
 				25ADB692221DC2A100A35B05 /* KNContactTableViewCell.xib in Resources */,
 				25ADB62E221DC2A100A35B05 /* Montserrat-Regular.ttf in Resources */,
 				25ADB5F8221DC2A100A35B05 /* SF-Pro-Text-Bold.otf in Resources */,
+				2543D86E223A67C10085F40E /* NetworkProxy.json in Resources */,
 				25ADB5FE221DC2A100A35B05 /* SF-Pro-Display-BlackItalic.otf in Resources */,
 				25ADB6EA221DC2A100A35B05 /* KNBalanceTokenTableViewCell.xib in Resources */,
 				25ADB5F2221DC2A100A35B05 /* SF Pro Font License.rtf in Resources */,
@@ -3734,7 +3734,6 @@
 				25ADB5E6221DC2A000A35B05 /* KNEnvironment.swift in Sources */,
 				25ADB5C4221DC2A000A35B05 /* Transaction.swift in Sources */,
 				25ADB64C221DC2A100A35B05 /* KNTransaction.swift in Sources */,
-				25ADB5E7221DC2A000A35B05 /* KNSecret.swift in Sources */,
 				25ADB59C221DC2A000A35B05 /* CALayer.swift in Sources */,
 				25ADB6CC221DC2A100A35B05 /* KNLandingPageCoordinator.swift in Sources */,
 				25ADB6A8221DC2A100A35B05 /* KAdvancedSettingsView.swift in Sources */,
@@ -3768,6 +3767,7 @@
 				25ADB5BF221DC2A000A35B05 /* RPCServers.swift in Sources */,
 				25ADB6D6221DC2A100A35B05 /* KNSettingsCoordinator.swift in Sources */,
 				25ADB5AB221DC2A000A35B05 /* UIImage.swift in Sources */,
+				2543D86B223A67AB0085F40E /* KNSecret.swift in Sources */,
 				25ADB591221DC2A000A35B05 /* JailbreakChecker.swift in Sources */,
 				25ADB6CF221DC2A100A35B05 /* KNAddNewWalletCoordinator.swift in Sources */,
 				25ADB6B3221DC2A100A35B05 /* KNWelcomeScreenCollectionView.swift in Sources */,
